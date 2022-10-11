@@ -1,44 +1,42 @@
 package comunicacion;
 
-public abstract class Escrito extends Pictograma{
+public class Fabula extends Escrito{
+    private String ensenanza;
+    private String interpretacion;
 
-    private String titulo;
-    private String autor;
-    private int paginas;
-    public Escrito(String origen, String titulo, String autor, int paginas) {
-        super(origen);
-        this.titulo = titulo;
-        this.autor = autor;
-        this.paginas = paginas;
+    public Fabula(String origen, String titulo, String autor, int paginas, String ensenanza, String interpretacion) {
+        super(origen, titulo, autor, paginas);
+        this.ensenanza = ensenanza;
+        this.interpretacion = interpretacion;
     }
 
-    public String getTitulo() {
-        return titulo;
-    }
-    public void setTitulo(String titulo) {
-        this.titulo = titulo;
-    }
-    public String getAutor() {
-        return autor;
-    }
-    public void setAutor(String autor) {
-        this.autor = autor;
-    }
-    public int getPaginas() {
-        return paginas;
-    }
-    public void setPaginas(int paginas) {
-        this.paginas = paginas;
+    public int palabrasTotales(int var){
+        return getPaginas() * var;
     }
 
-    public String resumen() {
-        String res = this.getOrigen() + "\n";
-        res += this.titulo + "\n";
-        res += this.autor + "\n";
-        res += this.paginas;
-        return  res;
+    public String interpretacion(){
+        return this.interpretacion;
     }
 
-    abstract int palabrasTotales(int palabrasPagina);
+    @Override
+    public String toString() {
+        String texto = getOrigen()+"\n"+getTitulo()+"\n"+getAutor()+"\n"+getPaginas()+"\n"+getEnsenanza();
+        return texto;
+    }
 
+    public String getEnsenanza() {
+        return ensenanza;
+    }
+
+    public void setEnsenanza(String ensenanza) {
+        this.ensenanza = ensenanza;
+    }
+
+    public String getInterpretacion() {
+        return interpretacion;
+    }
+
+    public void setInterpretacion(String interpretacion) {
+        this.interpretacion = interpretacion;
+    }
 }
