@@ -1,7 +1,7 @@
 package comunicacion;
 
 public abstract class Escrito extends Pictograma{
-	
+
 	private String titulo;
 	private String autor;
 	private int paginas;
@@ -11,7 +11,7 @@ public abstract class Escrito extends Pictograma{
 		this.autor = autor;
 		this.paginas = paginas;
 	}
-	
+
 	public String getTitulo() {
 		return titulo;
 	}
@@ -30,7 +30,7 @@ public abstract class Escrito extends Pictograma{
 	public void setPaginas(int paginas) {
 		this.paginas = paginas;
 	}
-	
+
 	public String resumen() {
 		String r = this.getOrigen() + "\n";
 		r += this.titulo + "\n";
@@ -38,7 +38,7 @@ public abstract class Escrito extends Pictograma{
 		r += this.paginas;
 		return  r;
 	}
-	
+
 	abstract int palabrasTotales(int palabrasPagina);
-	
+
 }
