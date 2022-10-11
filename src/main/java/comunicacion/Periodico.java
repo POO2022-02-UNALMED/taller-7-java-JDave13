@@ -39,7 +39,7 @@ public class Periodico extends Escrito{
     }
 
     public void setPrimicia(String primicia) {
-        this._primicia = primicia;
+        this.primicia = primicia;
     }
 
     public String getInterpretacion() {
