@@ -1,23 +1,17 @@
 package comunicacion;
 
-public class Tesis extends Escrito{
-    private String idea;
-    private String argumentos[];
-    private String conclusion;
-    private String referencias;
+public class Alfabeto extends Pictograma{
+    private String letras[];
     private String interpretacion;
 
-    public Tesis(String origen, String titulo, String autor, int paginas, String idea, String[] argumentos, String conclusion, String referencias, String interpretacion) {
-        super(origen, titulo, autor, paginas);
-        this.idea = idea;
-        this.argumentos = argumentos;
-        this.conclusion = conclusion;
-        this.referencias = referencias;
+    public Alfabeto(String origen, String[] letras, String interpretacion) {
+        super(origen);
+        this.letras = letras;
         this.interpretacion = interpretacion;
     }
 
-    public int palabrasTotales(int var){
-        return getPaginas()*var*5;
+    public int cantidadLetras(){
+        return this.letras.length;
     }
 
     public String interpretacion(){
@@ -26,47 +20,8 @@ public class Tesis extends Escrito{
 
     @Override
     public String toString() {
-        String texto = getOrigen()+"\n"+getTitulo()+"\n"+getAutor()+"\n"+getPaginas()+"\n"+getIdea()+"\n"+getArgumentos().length+"\n"+getConclusion()+"\n"+getReferencias();
+        String texto="A, B, C, D, E, F, G, H, I, J, K, L, M, N, O, P, Q, R, S, T, U, V, W, X, Y, Z";
+
         return texto;
-    }
-
-    public String getIdea() {
-        return idea;
-    }
-
-    public void setIdea(String idea) {
-        this.idea = idea;
-    }
-
-    public String[] getArgumentos() {
-        return argumentos;
-    }
-
-    public void setArgumentos(String[] argumentos) {
-        this.argumentos = argumentos;
-    }
-
-    public String getConclusion() {
-        return conclusion;
-    }
-
-    public void setConclusion(String conclusion) {
-        this.conclusion = conclusion;
-    }
-
-    public String getReferencias() {
-        return referencias;
-    }
-
-    public void setReferencias(String referencias) {
-        this.referencias = referencias;
-    }
-
-    public String getInterpretacion() {
-        return interpretacion;
-    }
-
-    public void setInterpretacion(String interpretacion) {
-        this.interpretacion = interpretacion;
     }
 }
