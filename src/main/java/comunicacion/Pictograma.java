@@ -1,23 +1,25 @@
 package comunicacion;
-public class Alfabeto extends Pictograma{
-	private String letras[];
-	private String interpretacion;
-	public Alfabeto(String origen, String[] letras, String interpretacion) {
-		super(origen);
-		this.letras = letras;
-		this.interpretacion = interpretacion;
-	}
-	public int cantidadLetras(){
-		return this.letras.length;
-	}
-	public String interpretacion(){
-		return this.interpretacion;
+
+public abstract class Pictograma {
+
+	private String origen;
+
+	public Pictograma(String origen) {
+		super();
+		this.origen = origen;
 	}
 
-	@Override
-	public String toString() {
-		String texto="A, B, C, D, E, F, G, H, I, J, K, L, M, N, O, P, Q, R, S, T, U, V, W, X, Y, Z";
-
-		return texto;
+	public String getOrigen() {
+		return origen;
 	}
+
+	public void setOrigen(String origen) {
+		this.origen = origen;
+	}
+
+	abstract String interpretacion ();
+
+	public abstract String toString();
+
+
 }
